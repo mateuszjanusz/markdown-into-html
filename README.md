@@ -4,11 +4,9 @@
 
 ## Features
 
-Supports
-
 -   Transforms local files and files from URL
 -   Uses [markdown-it](https://github.com/markdown-it/markdown-it) to convert from Markdown to HTML
--   Configurable, check list of [options](##Options)
+-   Configurable, check list of [options](#Options)
 -   Supports:
     -   tables
     -   HTML tags
@@ -22,16 +20,6 @@ Supports
     -   superscripts
     -   subscripts
     -   qoutes, styling and more
-
-## Table of Contents
-
--   [Table of Contents](#Table-of-contents)
--   [Installation](#Installation)
--   [Usage](#Usage)
--   [Properties](#Properties)
--   [Options](#Options)
--   [License](#License)
--   [References](#References)
 
 ## Installation
 
@@ -54,7 +42,7 @@ Local file:
 ```javascript
 const markdownToHtml = require('markdown-to-html')
 
-const html_content = await markdownToHtml({
+const html_code = await markdownToHtml({
     path: './myMarkdownFile.md',
 })
 ```
@@ -64,18 +52,18 @@ URL source:
 ```javascript
 const markdownToHtml = require('markdown-to-html')
 
-const html_content = await markdownToHtml({
+const html_code = await markdownToHtml({
     url: 'https://raw.githubusercontent.com/mateuszjanusz/markdown-to-html/master/README.md',
 })
 ```
 
 ## Properties
 
-| Prop                 | Type   | Description                                                    |
-| -------------------- | ------ | -------------------------------------------------------------- |
-| path                 | String | The location of a file to transform                            |
-| url                  | String | The URL source of a file to transform                          |
-| [options](##Options) | Object | Rules and options, check the table below for available options |
+| Prop                | Type   | Description                                                    |
+| ------------------- | ------ | -------------------------------------------------------------- |
+| path                | String | The location of a file to transform                            |
+| url                 | String | The URL source of a file to transform                          |
+| [options](#Options) | Object | Rules and options, check the table below for available options |
 
 ## Options
 
