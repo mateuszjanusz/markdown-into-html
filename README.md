@@ -1,4 +1,4 @@
-# markdown-to-html
+# markdown-into-html
 
 > Transform Markdown to HTML
 
@@ -38,7 +38,7 @@ npm install markdown-to-html
 ## Usage
 
 ```javascript
-const markdownIntoHtml = require('markdown-to-html')
+const markdownIntoHtml = require('markdown-into-html')
 
 // Local file
 const html_code = await markdownIntoHtml({

@@ -1,5 +1,5 @@
 const fs = require('fs')
-const markdownIntoHtml = require('./src/').default
+const markdownIntoHtml = require('./src/')
 
 const url = 'https://raw.githubusercontent.com/mateuszjanusz/picsort/master/README.md'
 const run = async () => {
