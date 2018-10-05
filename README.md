@@ -38,20 +38,20 @@ npm install markdown-to-html
 ## Usage
 
 ```javascript
-const markdownToHtml = require('markdown-to-html')
+const markdownIntoHtml = require('markdown-to-html')
 
 // Local file
-const html_code = await markdownToHtml({
+const html_code = await markdownIntoHtml({
     path: './myMarkdownFile.md',
 })
 
 // URL source
-const html_code = await markdownToHtml({
-    url: 'https://raw.githubusercontent.com/mateuszjanusz/markdown-to-html/master/README.md',
+const html_code = await markdownIntoHtml({
+    url: 'https://raw.githubusercontent.com/mateuszjanusz/markdown-into-html/master/README.md',
 })
 
 // Using options:
-const html_code = await markdownToHtml({
+const html_code = await markdownIntoHtml({
     path: './myMarkdownFile.md',
     options: {
         emoji: false, // disabling emojis

@@ -1,24 +1,24 @@
-const fs = require('fs')
-const request = require('request')
+import { existsSync, readFile } from 'fs'
+import { get } from 'request'
 
-const markdownIt = require('markdown-it')
-const emoji = require('markdown-it-emoji')
-const subscript = require('markdown-it-sub')
-const superscript = require('markdown-it-sup')
-const footnote = require('markdown-it-footnote')
-const deflist = require('markdown-it-deflist')
-const abbreviation = require('markdown-it-abbr')
-const insert = require('markdown-it-ins')
-const mark = require('markdown-it-mark')
-const tasklists = require('markdown-it-task-lists')
+import markdownIt from 'markdown-it'
+import emoji from 'markdown-it-emoji'
+import subscript from 'markdown-it-sub'
+import superscript from 'markdown-it-sup'
+import footnote from 'markdown-it-footnote'
+import deflist from 'markdown-it-deflist'
+import abbreviation from 'markdown-it-abbr'
+import insert from 'markdown-it-ins'
+import mark from 'markdown-it-mark'
+import tasklists from 'markdown-it-task-lists'
 
-const markdownToHtml = async ({ path, url, options }) => {
+const markdownIntoHtml = async ({ path, url, options }) => {
     let file_content = null
 
     if (url) {
         file_content = await readFileFromUrl(url)
     } else if (path) {
-        if (!fs.existsSync(path)) {
+        if (!existsSync(path)) {
             throw new Error('File not found.')
         }
 
@@ -73,7 +73,7 @@ const markdownToHtml = async ({ path, url, options }) => {
 
 const readFileFromPath = path => {
     return new Promise((resolve, reject) => {
-        fs.readFile(path, { encoding: 'utf-8' }, (err, data) => {
+        readFile(path, { encoding: 'utf-8' }, (err, data) => {
             if (err) {
                 reject(err)
             } else {
@@ -85,7 +85,7 @@ const readFileFromPath = path => {
 
 const readFileFromUrl = url => {
     return new Promise((resolve, reject) => {
-        request.get(url, {}, (err, res, data) => {
+        get(url, {}, (err, res, data) => {
             if (err) {
                 reject(err)
             } else {
@@ -95,4 +95,4 @@ const readFileFromUrl = url => {
     })
 }
 
-module.exports = markdownToHtml
+export default markdownIntoHtml
