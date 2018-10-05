@@ -1,8 +1,7 @@
 const fs = require('fs')
-const markdownFile = require('./')
+const markdownFile = require('./src/')
 
-// const url = 'https://raw.githubusercontent.com/mateuszjanusz/picsort/master/README.md'
-const url = 'https://raw.githubusercontent.com/starshellhq/vue-markdown2/master/README.md'
+const url = 'https://raw.githubusercontent.com/mateuszjanusz/picsort/master/README.md'
 const run = async () => {
 	const html_content = await markdownFile({
 		// path: './test.md',
