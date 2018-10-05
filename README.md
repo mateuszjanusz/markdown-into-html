@@ -37,23 +37,25 @@ npm install markdown-to-html
 
 ## Usage
 
-Local file:
-
 ```javascript
 const markdownToHtml = require('markdown-to-html')
 
+// Local file
 const html_code = await markdownToHtml({
     path: './myMarkdownFile.md',
 })
-```
 
-URL source:
-
-```javascript
-const markdownToHtml = require('markdown-to-html')
-
+// URL source
 const html_code = await markdownToHtml({
     url: 'https://raw.githubusercontent.com/mateuszjanusz/markdown-to-html/master/README.md',
+})
+
+// Using options:
+const html_code = await markdownToHtml({
+    path: './myMarkdownFile.md',
+    options: {
+        emoji: false, // disabling emojis
+    },
 })
 ```
 
@@ -69,17 +71,17 @@ const html_code = await markdownToHtml({
 
 By default all rules are enabled, but can be restricted by options.
 
-| Option      | Type    | Default     | Describe                                                                                                       |
-| ----------- | ------- | ----------- | -------------------------------------------------------------------------------------------------------------- |
-| html        | Boolean | `true`      | Enable HTML tags in source                                                                                     |
-| xhtmlOut    | Boolean | `true`      | Close single tags with '/' (e.g. <br />)                                                                       |
-| breaks      | Boolean | `true`      | Autoconvert '\n' in paragraphs to <br>                                                                         |
-| linkify     | Boolean | `true`      | Autoconvert URL-like text to link                                                                              |
-| emoji       | Boolean | `true`      | Enable Emoji syntax plugin and support emoticons shortcuts                                                     |
-| typographer | Boolean | `true`      | Enable some language-neutral replacement and quotes beautification                                             |
-| langPrefix  | String  | `language-` | CSS language prefix for fenced blocks                                                                          |
-| quotes      | String  | `“”‘’`      | Double + single quotes replacement pairs, e.g. use , `«»„“` for Russian, `“”‘’` for Chinese, `„“‚‘` for German |
-| taskLists   | Boolean | `true`      | enable task/todo lists with items starting with [ ] or [x]                                                     |
+| Option      | Type    | Default     | Describe                                                                                                     |
+| ----------- | ------- | ----------- | ------------------------------------------------------------------------------------------------------------ |
+| html        | Boolean | `true`      | Enable HTML tags in source                                                                                   |
+| xhtmlOut    | Boolean | `true`      | Close single tags with '/' (e.g. `<br />`)                                                                   |
+| breaks      | Boolean | `true`      | Autoconvert '\n' in paragraphs to `<br>`                                                                     |
+| linkify     | Boolean | `true`      | Autoconvert URL-like text to link                                                                            |
+| emoji       | Boolean | `true`      | Enable Emoji syntax plugin and support emoticons shortcuts                                                   |
+| typographer | Boolean | `true`      | Enable some language-neutral replacement and quotes beautification                                           |
+| langPrefix  | String  | `language-` | CSS language prefix for fenced blocks                                                                        |
+| quotes      | String  | `“”‘’`      | Double + single quotes replacement pairs, e.g. use `«»„“` for Russian, `“”‘’` for Chinese, `„“‚‘` for German |
+| taskLists   | Boolean | `true`      | enable task/todo lists with items starting with [ ] or [x]                                                   |
 
 ## License
 
