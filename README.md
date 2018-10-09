@@ -1,6 +1,9 @@
 # markdown-into-html
 
+[![](https://img.shields.io/npm/v/markdown-into-html.svg)]()
+[![](https://img.shields.io/npm/dt/markdown-into-html.svg)]()
 > Transform Markdown to HTML
+
 
 ## Features
 
