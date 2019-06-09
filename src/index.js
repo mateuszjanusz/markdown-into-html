@@ -31,15 +31,15 @@ const markdownIntoHtml = async ({ path, url, options }) => {
 
     // markdown-it options
     const md_options = {
-        html: (options && options.html) || true,
-        xhtmlOut: (options && options.xhtmlOut) || true,
-        breaks: (options && options.breaks) || true,
-        linkify: (options && options.linkify) || true,
-        typographer: (options && options.typographer) || true,
+        html: (options && options.html !== undefined) ? options.html : true,
+        xhtmlOut: (options && options.xhtmlOut !== undefined) ? options.xhtmlOut : true,
+        breaks: (options && options.breaks !== undefined) ? options.breaks : true,
+        linkify: (options && options.linkify !== undefined) ? options.linkify : true,
+        typographer: (options && options.typographer !== undefined) ? options.typographer : true,
         langPrefix: (options && options.langPrefix) || 'language-',
         quotes: (options && options.quotes) || '“”‘’',
-        emoji: (options && options.emoji) || true,
-        taskLists: (options && options.taskLists) || true,
+        emoji: (options && options.emoji !== undefined) ? options.emoji : true,
+        taskLists: (options && options.taskLists !== undefined) ? options.taskLists : true,
     }
 
     const md = new markdownIt()
